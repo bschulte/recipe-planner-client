@@ -12,10 +12,10 @@
       <template v-slot:option="scope">
         <q-item v-bind="scope.itemProps" v-on="scope.itemEvents">
           <q-item-section avatar class="flex flex-center">
-            <q-icon name="fal fa-user"/>
+            <q-icon name="fal fa-user" />
           </q-item-section>
           <q-item-section>
-            <q-item-label v-html="scope.opt.label"/>
+            <q-item-label v-html="scope.opt.label" />
           </q-item-section>
         </q-item>
       </template>
@@ -55,8 +55,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~quasar-variables';
-
 .root {
   min-width: 150px;
 }

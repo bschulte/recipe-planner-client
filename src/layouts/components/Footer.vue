@@ -14,8 +14,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '~quasar-variables';
-
 .footer {
   margin-left: 5px;
   height: 40px;

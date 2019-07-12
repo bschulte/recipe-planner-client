@@ -1,18 +1,18 @@
 <template>
   <q-page padding>
-    <home-page/>
+    <recipe-list-table />
   </q-page>
 </template>
 
 <style></style>
 
 <script>
-import HomePage from "../components/Index/HomePage.vue";
+import RecipeListTable from "../components/Index/RecipeListTable.vue";
 
 export default {
   name: "Index",
   components: {
-    HomePage
+    RecipeListTable
   }
 };
 </script>

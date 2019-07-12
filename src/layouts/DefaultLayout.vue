@@ -60,8 +60,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '~quasar-variables';
-
 .header {
   border-top: 3px solid $primary;
 }

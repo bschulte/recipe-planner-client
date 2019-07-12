@@ -50,7 +50,3 @@ export default {
   }
 };
 </script>
-
-<style lang="stylus" scoped>
-@import '~quasar-variables';
-</style>

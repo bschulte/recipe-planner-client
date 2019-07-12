@@ -21,10 +21,10 @@
           @click="navigate(route.path)"
         >
           <q-item-section avatar>
-            <q-icon :name="route.icon"/>
+            <q-icon :name="route.icon" />
           </q-item-section>
 
-          <q-item-section>{{route.name}}</q-item-section>
+          <q-item-section>{{ route.name }}</q-item-section>
         </q-item>
       </q-list>
     </q-scroll-area>
@@ -69,8 +69,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~quasar-variables';
-
 .menu-item {
   height: 60px;
   color: #fff;

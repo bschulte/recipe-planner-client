@@ -1,13 +1,19 @@
 <template>
   <div>
-    <q-circular-progress v-if="!user" indeterminate/>
-    <q-btn-dropdown v-else stretch flat :label="user.email" class="user-dropdown">
+    <q-circular-progress v-if="!user" indeterminate />
+    <q-btn-dropdown
+      v-else
+      stretch
+      flat
+      :label="user.email"
+      class="user-dropdown"
+    >
       <q-list>
         <q-item-label header class="list-header">account</q-item-label>
 
         <q-item clickable @click="logout">
           <q-item-section avatar>
-            <q-icon name="fal fa-sign-out"/>
+            <q-icon name="fal fa-sign-out" />
           </q-item-section>
           <q-item-section>
             <span>Logout</span>
@@ -37,8 +43,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~quasar-variables';
-
 .list-header {
   background-color: $grey-4;
   text-transform: uppercase;

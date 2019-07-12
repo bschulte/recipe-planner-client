@@ -9,7 +9,3 @@ export default {
   name: "Admin"
 };
 </script>
-
-<style lang="stylus" scoped>
-@import '~quasar-variables';
-</style>
