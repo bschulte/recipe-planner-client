@@ -4,7 +4,7 @@ module.exports = function(ctx) {
   return {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
-    boot: ["axios", "fontawesome-pro", "apollo"],
+    boot: ["axios", "fontawesome-pro", "apollo", "global-components"],
 
     css: ["app.styl"],
 
@@ -34,6 +34,7 @@ module.exports = function(ctx) {
         "QTabPanels",
         "QTabPanel",
         "QCardSection",
+        "QMarkupTable",
         "QSeparator",
         "QInput",
         "QDrawer",

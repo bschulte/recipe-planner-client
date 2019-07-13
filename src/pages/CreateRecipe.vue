@@ -13,6 +13,7 @@
 
 <script>
 import gql from "graphql-tag";
+import { GET_RECIPES } from "../graphql/queries";
 
 export default {
   name: "CreateRecipe",
@@ -36,16 +37,24 @@ export default {
             }
           }
         `,
+
         variables: {
           recipeInput: {
             name: this.name,
             url: this.url,
             dishType: this.dishType
           }
-        }
+        },
+
+        refetchQueries: [{ query: GET_RECIPES }],
+        awaitRefetchQueries: true
       });
 
       console.log("Created recipe id:", response.data.createRecipe.id);
+
+      this.name = "";
+      this.url = "";
+      this.dishType = "";
     }
   }
 };

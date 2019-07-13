@@ -17,14 +17,11 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-
-    <Footer />
   </q-layout>
 </template>
 
 <script>
 import UserMenuDropdown from "./components/UserMenuDropdown.vue";
-import Footer from "./components/Footer.vue";
 import store from "../store";
 
 import { GET_USER } from "../graphql/queries";
@@ -32,7 +29,6 @@ import { SET_USER_INFO } from "../store/user/constants";
 
 export default {
   components: {
-    Footer,
     UserMenuDropdown
   },
 

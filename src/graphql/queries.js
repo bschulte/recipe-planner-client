@@ -27,3 +27,14 @@ export const ADMIN_GET_USERS = gql`
     }
   }
 `;
+
+export const GET_RECIPES = gql`
+  {
+    recipes {
+      id
+      url
+      name
+      dishType
+    }
+  }
+`;

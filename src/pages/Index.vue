@@ -1,6 +1,14 @@
 <template>
   <q-page padding>
-    <recipe-list-table />
+    <row class="q-gutter-md">
+      <div class="col">
+        <recipe-list-table />
+      </div>
+
+      <div class="col">
+        <recipes-for-the-week />
+      </div>
+    </row>
   </q-page>
 </template>
 
@@ -8,11 +16,13 @@
 
 <script>
 import RecipeListTable from "../components/Index/RecipeListTable.vue";
+import RecipesForTheWeek from "../components/Index/RecipesForTheWeek.vue";
 
 export default {
   name: "Index",
   components: {
-    RecipeListTable
+    RecipeListTable,
+    RecipesForTheWeek
   }
 };
 </script>

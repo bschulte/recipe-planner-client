@@ -1,36 +1,54 @@
 <template>
   <div>
-    <div>This is where your home page content will go</div>
-    <div>
-      <q-markup-table>
+    <q-markup-table>
+      <tbody>
         <tr v-for="recipe in recipes" v-bind:key="recipe.id">
+          <td>{{ recipe.name }} - {{ recipe.dishType }}</td>
           <td>
-            {{ recipe.name }}
+            <q-btn @click="deleteRecipe(recipe.id)" round icon="far fa-times" />
           </td>
         </tr>
-      </q-markup-table>
-    </div>
+      </tbody>
+    </q-markup-table>
   </div>
 </template>
 
 <script>
 import gql from "graphql-tag";
+import { GET_RECIPES } from "../../graphql/queries";
 
 export default {
   name: "RecipeListTable",
 
   apollo: {
     recipes: {
-      query: gql`
-        {
-          recipes {
-            id
-            url
-            name
-            dishType
+      query: GET_RECIPES
+    }
+  },
+
+  methods: {
+    async deleteRecipe(id) {
+      const response = await this.$apollo.mutate({
+        mutation: gql`
+          mutation($id: Float!) {
+            deleteRecipe(id: $id) {
+              id
+              url
+              name
+              dishType
+            }
           }
-        }
-      `
+        `,
+
+        variables: {
+          id
+        },
+
+        refetchQueries: [{ query: GET_RECIPES }],
+        awaitRefetchQueries: true
+      });
+
+      console.log("Delete response:", response);
     }
   }
 };
