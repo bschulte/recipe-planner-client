@@ -1,12 +1,18 @@
 <template>
   <q-card>
     <q-card-section>
-      <q-btn @click="generateRecipes">Generate</q-btn>
+      <q-btn color="primary" class="full-width" @click="generateRecipes"
+        >Generate</q-btn
+      >
+    </q-card-section>
 
+    <q-card-section>
       <q-markup-table>
         <tbody>
           <tr v-for="(recipe, index) in recipesForTheWeek" v-bind:key="index">
-            <td>{{ recipe.name }}</td>
+            <td>
+              <a :href="recipe.url" target="_blank">{{ recipe.name }}</a>
+            </td>
           </tr>
         </tbody>
       </q-markup-table>

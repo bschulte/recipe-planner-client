@@ -52,6 +52,9 @@ export default {
       );
 
       console.log("Import response:", response);
+      this.$q.notify({ message: "Imported recipes" });
+
+      this.$router.push("/");
     }
   }
 };
