@@ -42,8 +42,16 @@ export default {
   },
 
   methods: {
-    importBookmarks() {
-      console.log("File:", this.file);
+    async importBookmarks() {
+      const formData = new FormData();
+      formData.append("bookmarks", this.file);
+
+      const response = await this.$axios.post(
+        "/importer/chrome-bookmarks",
+        formData
+      );
+
+      console.log("Import response:", response);
     }
   }
 };

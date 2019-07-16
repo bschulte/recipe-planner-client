@@ -88,12 +88,9 @@ module.exports = function(ctx) {
       // port: 8080,
       open: true, // opens browser window automatically
       proxy: {
-        "/app-submission": {
-          target: "http://localhost:5111",
+        "/importer": {
+          target: "http://localhost:5112",
           changeOrigin: true
-          // pathRewrite: {
-          //   "^/api": ""
-          // }
         }
       }
     },

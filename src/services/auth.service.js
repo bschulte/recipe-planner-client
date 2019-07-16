@@ -33,7 +33,8 @@ export const getToken = () => localStorage.getItem(TOKEN) || "";
 export const setToken = token => {
   localStorage.setItem(TOKEN, token);
   // Set the default axios token as well
-  axios.defaults.headers.common.Authorization = token;
+  console.log("Setting axios token to:", token);
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 export const login = async (email, password) => {
