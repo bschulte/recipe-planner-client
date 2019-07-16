@@ -4,7 +4,12 @@
       <q-input v-model="name" label="Name"></q-input>
       <q-input v-model="url" label="URL"></q-input>
       <q-input v-model="dishType" label="Dish Type"></q-input>
-      <q-btn @click="createRecipe" class="q-mt-md full-width">Create</q-btn>
+    </q-card-section>
+
+    <q-card-section>
+      <q-btn color="primary" @click="createRecipe" class="q-mt-md full-width">
+        Create
+      </q-btn>
     </q-card-section>
   </q-card>
 </template>
