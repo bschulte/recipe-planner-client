@@ -34,6 +34,7 @@ module.exports = {
     "arrow-parens": "off",
     "import/no-cycle": "off",
     "import/named": "error",
+    "no-plusplus": "off",
     "import/namespace": "error",
     "import/default": "error",
     "import/export": "error",
