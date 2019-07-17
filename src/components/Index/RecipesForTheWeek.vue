@@ -13,6 +13,18 @@
             <td>
               <a :href="recipe.url" target="_blank">{{ recipe.name }}</a>
             </td>
+            <td style="width: 15%">
+              <q-btn
+                color="negative"
+                v-if="lockedDays.includes(index)"
+                @click="toggleRecipeLock(index)"
+              >
+                Locked
+              </q-btn>
+              <q-btn v-else @click="toggleRecipeLock(index)">
+                Lock
+              </q-btn>
+            </td>
           </tr>
         </tbody>
       </q-markup-table>
@@ -28,7 +40,8 @@ export default {
 
   data() {
     return {
-      recipesForTheWeek: []
+      recipesForTheWeek: [],
+      lockedDays: []
     };
   },
 
@@ -41,6 +54,12 @@ export default {
       const DAYS_IN_WEEK = 7;
 
       for (let i = 0; i < DAYS_IN_WEEK; i++) {
+        if (this.lockedDays.includes(i)) {
+          console.log("Skipping locked day:", i);
+          newRecipes.push(this.recipesForTheWeek[i]);
+          continue;
+        }
+
         const randomIndex = this.getRandomRecipeIndex(recipesClone);
         newRecipes.push(recipesClone[randomIndex]);
 
@@ -54,6 +73,15 @@ export default {
 
     getRandomRecipeIndex(recipes) {
       return Math.floor(Math.random() * recipes.length);
+    },
+
+    toggleRecipeLock(dayIndex) {
+      console.log("Toggling day index lock:", dayIndex);
+      if (this.lockedDays.includes(dayIndex)) {
+        this.lockedDays = this.lockedDays.filter(day => day !== dayIndex);
+      } else {
+        this.lockedDays.push(dayIndex);
+      }
     }
   },
 

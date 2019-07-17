@@ -31,6 +31,7 @@ module.exports = {
     quotes: "off",
     "no-param-reassign": "off",
     "import/first": "off",
+    "no-continue": "off",
     "arrow-parens": "off",
     "import/no-cycle": "off",
     "import/named": "error",
