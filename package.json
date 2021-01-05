@@ -22,7 +22,7 @@
     "apollo-link-context": "^1.0.14",
     "apollo-link-error": "^1.1.10",
     "apollo-link-http": "^1.5.11",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
